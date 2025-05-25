@@ -1,4 +1,4 @@
-from mlx_lm.utils import load, generate_step
+from mlx_lm.generate import generate_step
 import mlx.core as mx
 import re
 
@@ -10,7 +10,7 @@ def generate_steps(the_prompt, the_model, tokenizer):
     tokens = []
     skip = 0
 
-    for (token, prob), n in zip(generate_step(mx.array(tokenizer.encode(the_prompt)), the_model, temperature),
+    for (token, prob), n in zip(generate_step(mx.array(tokenizer.encode(the_prompt)), the_model),
                                 range(context_length)):
         try:
             if token == tokenizer.eos_token_id:
