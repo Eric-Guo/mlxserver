@@ -3,7 +3,7 @@ import mlx.core as mx
 import re
 
 temperature = 0
-context_length = 1000
+context_length = 32768
 stop_words = ["<|im_start|>", "<|im_end|>", "<s>", "</s>"]
 
 def generate_steps(the_prompt, the_model, tokenizer):

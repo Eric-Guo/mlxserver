@@ -1,4 +1,4 @@
-from mlx_lm.utils import load
+from mlx_lm import load
 
 def load_model(model):
     return load(model)

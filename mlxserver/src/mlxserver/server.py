@@ -18,7 +18,7 @@ class MLXServer():
         self.model = model
         self.port = port 
         self.loaded_model, self.tokenizer = load_model(model)
-    
+
         @self.app.route('/generate')
         def generate_endpoint():
             prompt = request.args.get("prompt")
